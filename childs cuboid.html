@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+         body {
+            display: flex;
+            padding-top: 200px;
+            justify-content: center;
+         }
+
+         
+         .container {
+             height: 400px;
+             width: 400px;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             perspective: 1000px;
+             perspective-origin: top right;
+             /* transform: rotateX('20deg') rotateY('30deg'); */
+             
+            }
+            
+            .cube {
+               perspective-origin: top right;
+               position: relative;
+               height: 200px;
+               width: 300px;
+               transform-style: preserve-3d;
+            }
+
+         .side {
+            position: absolute;
+            width: 300px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: black 2px solid;
+            border-radius: 5px;
+         }
+          
+         .front {
+            transform: translateZ(142px) translateX(11px) translateY(-2px)
+         }
+         .back {
+            transform: translateZ(-149px) translateX(63px) translateY(-2px);
+         }
+          
+         .right {
+            background-color: skyblue;
+            transform: rotateY(80deg) translateZ(186px) translateX(37px) translateY(-2px);
+         }
+         .left {
+            background-color: skyblue;
+            transform: rotateY(80deg) translateZ(-119px) translateX(-4px) translateY(-1px);
+         }
+
+         .circle {
+            position: absolute;
+            top: 138px;
+            left: 40px;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            border: black 2px solid;
+            background-color: green;
+         }
+
+         .hexagon {
+            position: absolute;
+            top: 9px;
+            left: 9px;
+            width: 60px;
+            height: 60px;
+            background-color: yellow;
+            clip-path: polygon(0 33%, 50% 0, 100% 33%, 100% 66%, 51% 100%, 0 66%);
+         }
+
+         .heart {
+            /* border: black 2px solid; */
+            background-color: red;
+            display: inline-block;
+            height: 20px;
+            /* margin: 0 10px; */
+            position: relative;
+            top: 23px;
+            left: 20px;
+            transform: rotate(-45deg);
+            width: 20px;
+            z-index: 100;
+        }
+
+        .heart:before, .heart:after {
+            content: "";
+            background-color: red;
+            border-radius: 50%;
+            height: 20px;
+            position: absolute;
+            width: 20px;
+            /* border: black 2px solid; */
+        }
+
+        .heart:before {
+            top: -10px;
+            left: 0;
+         }
+
+        .heart:after {
+            left: 10px;
+            top: 0;
+        }
+
+        .stars{
+            position: absolute;
+            position: absolute;
+            left: -124px;
+            top: 241px;
+        }
+
+         .t1 {
+            width: 0; 
+            height: 0; 
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;             
+            border-bottom: 50px solid yellow;
+            rotate: 180deg;
+            margin: 2rem;
+            position: absolute;
+            left: 00px;
+            top: 20px;
+         }
+        
+         .t2 {
+            width: 0; 
+            height: 0; 
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 50px solid yellow;
+            margin: 2rem;
+         }
+         
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cube">
+            <div class="side front "></div>
+            <div class="side back "></div>
+            <div class="side left "></div>
+            <div class="side right "></div>     
+        </div>
+        <div class="circle">
+            <div class="hexagon">
+                <div class="heart">
+                </div>
+        </div>
+        </div>
+        <div class="stars">
+        <div class="star t1"></div>
+        <div class="star t2"></div>
+    </div>
+    </div>  
+</body>
+</html>
